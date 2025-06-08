@@ -1,65 +1,45 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Diogo & Cida</title>
-    <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            overflow: hidden;
-            font-family: Arial, sans-serif;
-            color: white;
-            text-align: center;
-        }
-        body {
-            background: url('fundo.jpg') no-repeat center center fixed;
-            background-size: cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .contador {
-            font-size: 2em;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border-radius: 20px;
-            margin-bottom: 20px;
-        }
-        iframe {
-            border: none;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diogo2707 - Página Especial</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('fundo.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-shadow: 1px 1px 4px #000;
+    }
+    .container {
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 30px;
+      border-radius: 15px;
+    }
+    h1 {
+      font-size: 3em;
+    }
+    audio {
+      display: none;
+    }
+  </style>
 </head>
 <body>
-    <div class="contador" id="tempoJuntos">
-        Carregando tempo juntos...
-    </div>
-    <iframe width="0" height="0" src="https://www.youtube.com/embed/TFHCehk2b0I?autoplay=1&loop=1&playlist=TFHCehk2b0I" allow="autoplay"></iframe>
-    <script>
-        const inicio = new Date('2025-02-28T07:02:00');
-
-        function atualizaContador() {
-            const agora = new Date();
-            const diff = agora - inicio;
-
-            const segundos = Math.floor(diff / 1000) % 60;
-            const minutos = Math.floor(diff / 1000 / 60) % 60;
-            const horas = Math.floor(diff / 1000 / 60 / 60) % 24;
-            const dias = Math.floor(diff / 1000 / 60 / 60 / 24);
-            const meses = Math.floor(dias / 30.4375);
-            const anos = Math.floor(meses / 12);
-
-            document.getElementById("tempoJuntos").innerText =
-                `${anos} anos, ${meses % 12} meses, ${dias % 30} dias, ` +
-                `${horas}h ${minutos}min ${segundos}s juntos 💖`;
-        }
-
-        setInterval(atualizaContador, 1000);
-        atualizaContador();
-    </script>
+  <div class="container">
+    <h1>Bem-vindo ao site de Diogo2707!</h1>
+    <p>Essa é uma homenagem com música de Shakira e muito carinho.</p>
+  </div>
+  <audio autoplay loop>
+    <source src="toneladas.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio embutido.
+  </audio>
 </body>
 </html>
