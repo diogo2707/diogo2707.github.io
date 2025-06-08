@@ -3,43 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Diogo2707 - Página Especial</title>
+  <title>Diogo & Cida</title>
   <style>
     body {
       margin: 0;
       padding: 0;
-      background: url('fundo.jpg') no-repeat center center fixed;
+      background-image: url('fundo.jpg');
       background-size: cover;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      background-position: center;
       color: white;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       text-shadow: 1px 1px 4px #000;
-    }
-    .container {
-      text-align: center;
-      background-color: rgba(0, 0, 0, 0.4);
-      padding: 30px;
-      border-radius: 15px;
+      background-repeat: no-repeat;
     }
     h1 {
       font-size: 3em;
     }
-    audio {
-      display: none;
+    #contador {
+      font-size: 2em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Bem-vindo ao site de Diogo2707!</h1>
-    <p>Essa é uma homenagem com música de Shakira e muito carinho.</p>
-  </div>
+  <h1>Diogo & Cida 💖</h1>
+  <div id="contador"></div>
   <audio autoplay loop>
-    <source src="toneladas.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio embutido.
+    <source src="toneladas.mp3" type="audio/mpeg" />
+    Seu navegador não suporta áudio.
   </audio>
+  <script>
+    const inicio = new Date("2025-02-28T07:02:00");
+    const contador = document.getElementById("contador");
+    function atualizarTempo() {
+      const agora = new Date();
+      const diferenca = agora - inicio;
+      const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+      const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+      const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+      const segundos = Math.floor((diferenca / 1000) % 60);
+      contador.textContent = `${dias} dias, ${horas}h ${minutos}m ${segundos}s juntos 💘`;
+    }
+    setInterval(atualizarTempo, 1000);
+    atualizarTempo();
+  </script>
 </body>
 </html>
